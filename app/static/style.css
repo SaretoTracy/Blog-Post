@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=EB+Garamond&family=Fruktur&family=Fugaz+One&family=Lobster&family=Luxurious+Roman&family=Monoton&family=Righteous&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Anton', sans-serif;
+    font-family: 'EB Garamond', serif;
+    font-family: 'Fruktur', cursive;
+    font-family: 'Fugaz One', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Luxurious Roman', cursive;
+    font-family: 'Monoton', cursive;
+    font-family: 'Righteous', cursive;
+}
+
+.one {
+    float: right;
+}
+
+.nav-item a {
+    color: #ff0000;
+}
