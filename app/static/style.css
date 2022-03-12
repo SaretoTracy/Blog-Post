@@ -12,10 +12,40 @@
     font-family: 'Righteous', cursive;
 }
 
-.one {
-    float: right;
+.home {
+    /* border: 15px solid#ff0000; */
+    /* margin-top: 1rem; */
+    background-color: black;
+}
+
+.navbar {
+    font-size: 28px;
+}
+
+.nav {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .nav-item a {
     color: #ff0000;
+    font-size: 24px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+span {
+    color: #ff0000;
+}
+
+.blog {
+    padding: 15px;
+}
+
+.p-3 {
+    box-shadow: 2px 2px 2px 2px white;
+    background-color: white;
 }
