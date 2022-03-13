@@ -15,7 +15,7 @@
 .home {
     /* border: 15px solid#ff0000; */
     /* margin-top: 1rem; */
-    background-color: black;
+    background-color: #192f40;
 }
 
 .navbar {
@@ -28,7 +28,7 @@
 }
 
 .nav-item a {
-    color: #ff0000;
+    color: white;
     font-size: 24px;
 }
 
@@ -38,7 +38,7 @@ h1 {
 }
 
 span {
-    color: #ff0000;
+    color: #F4B101;
 }
 
 .blog {
@@ -46,6 +46,16 @@ span {
 }
 
 .p-3 {
-    box-shadow: 2px 2px 2px 2px white;
+    background-color: #F4B101;
+}
+
+.p-3:hover {
     background-color: white;
+    /* box-shadow: 4px 2px 2px 4px white; */
+}
+
+.sign p {
+    color: white;
+    text-align: center;
+    font-size: 24px;
 }
