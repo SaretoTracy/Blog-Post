@@ -7,3 +7,11 @@ from . import main
 def index():
 
     return render_template('index.html')
+
+@main.route('/signup')
+def signup():
+
+    return render_template('signup.html')
+
+
+
