@@ -13,6 +13,16 @@ def signup():
         first_name = request.form.get('firstName')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
+
+        #form validation
+        if len(email) < 4:
+            flash('Email is too short')
+        elif len(first_name) < 2:
+            flash('First name must be greater than 1 character.')
+        elif password1 != password2:
+            flash('Passwords don\'t match')
+        elif len(password1) < 6:
+            flash('Password must be at least 6 characters.')
     return render_template('signup.html')
 
 
