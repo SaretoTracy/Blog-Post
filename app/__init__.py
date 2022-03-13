@@ -2,13 +2,12 @@ from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from config import config_options
-from .auth import db
+
 
 
 
 # define new database
 db = SQLAlchemy()  # database object
-DB_NAME = "blog"  # database name
 
 bootstrap = Bootstrap()
 # Initializing application
@@ -39,7 +38,7 @@ def create_app(config_name):
     app.config.from_object(config_options[config_name])
 
     from .models import User, Blog
-    create_database(app)
+    
 
     
 
