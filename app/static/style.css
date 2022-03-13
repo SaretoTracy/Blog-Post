@@ -45,6 +45,10 @@ span {
     color: #F4B101;
 }
 
+h3 {
+    color: #F4B101;
+}
+
 .blog {
     padding: 15px;
 }
@@ -69,6 +73,7 @@ span {
     justify-content: space-around;
     background-color: #192f40;
     height: 100vh;
+    margin-top: 2rem;
 }
 
 form {
@@ -84,6 +89,7 @@ form {
     position: relative;
     border-bottom: 2px solid #adadad;
     margin: 30px 0;
+    color: #F4B101;
 }
 
 .form-group input {
@@ -106,4 +112,9 @@ form {
 .in {
     margin-top: 3rem;
     color: #F4B101;
+}
+
+button {
+    background-color: #F4B101;
+    color: white;
 }

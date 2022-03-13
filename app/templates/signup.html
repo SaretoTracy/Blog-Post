@@ -12,14 +12,14 @@
 
 <body>
     <div class="container ">
-        <button class="btn back btn-primary"><a href="/index">Back</a></button>
+        <a href="{{ url_for('main.index') }}"><button class="btn back btn-primary">Back</button></a>
         <div class="log">
 
             <div class="content">
                 <h3>Lets Get you Started</h3>
                 <h3>It should only take a few minutes</h3>
                 <h3>Already signed in</h3>
-                <button class="btn transparent " id="signInBtn">Sign in</button>
+                <a href="/login"><button class="btn " id="signInBtn"> Login</button></a>
 
 
             </div>
