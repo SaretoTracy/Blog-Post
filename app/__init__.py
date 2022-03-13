@@ -1,4 +1,9 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+# define new database
+db = SQLAlchemy()  # database object
+DB_NAME = "blog"  # database name
 
 
 # Initializing application
