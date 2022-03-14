@@ -83,7 +83,7 @@ def dashboard():
     
 
     
-    return render_template('dashboard.html',blog=blog)
+    return render_template('dashboard.html',blog=blog, quotes=quotes)
 
 @auth.route("/create-comment/<blog_id>", methods=['POST'])
 @login_required

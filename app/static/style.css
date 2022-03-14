@@ -175,3 +175,8 @@ button {
     background: none;
     /* outline: none; */
 }
+
+.quote {
+    color: white;
+    text-align: center;
+}

@@ -26,7 +26,7 @@
             </ul>
         </div>
         <div class="quote">
-            <p> {% for quote in quotes%} {{quote.quote}} {% endfor %}</p>
+            <p> {% for quote in quotes%} {{quote.quote}}<br><small>AUTHOR: {{quote.author}}</small> {% endfor %}</p>
         </div>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators indicate">
