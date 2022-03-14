@@ -118,3 +118,19 @@ button {
     background-color: #F4B101;
     color: white;
 }
+
+.circle {
+    background-color: #F4B101;
+    text-align: center;
+    color: #192f40;
+    border-radius: 20px;
+}
+
+.tip {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tips {
+    border-right: 4px solid #F4B101;
+}

@@ -8,6 +8,6 @@ class BlogForm(FlaskForm):
     title = StringField('Title of Blog', validators=[InputRequired()])
     category = SelectField(u'Select Blog Category', choices=[('....Select Category', 'Select Category.....'), (
         'Fashion', 'Fashion'), ('Love', 'Love'), ('Home', 'Home'), ('Family', 'Family'), ('Beauty', 'Beauty'), ('Politics', 'Politics')])
-    description = StringField(
+    content = StringField(
         'Blog', validators=[InputRequired()], widget=TextArea())
 
