@@ -1,7 +1,7 @@
 from . import auth
 from flask_sqlalchemy import SQLAlchemy
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import User, Blog
+from .models import User, Blog,Comment
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, current_user
@@ -82,4 +82,23 @@ def dashboard():
 
     
     return render_template('dashboard.html',blog=blog)
+
+@auth.route("/create-comment/<blog_id>", methods=['POST'])
+@login_required
+def create_comment(blog_id):
+    content = request.form.get('content')
+
+    if not content:
+        flash('Comment cannot be empty.', category='error')
+    else:
+        blog = Blog.query.filter_by(id=blog_id)
+        if blog:
+            comment = Comment(
+                content=content, author=current_user.id, blog_id=blog_id)
+            db.session.add(comment)
+            db.session.commit()
+        else:
+            flash('blog does not exist.', category='error')
+
+    return redirect(url_for('auth.dashboard'))
 
