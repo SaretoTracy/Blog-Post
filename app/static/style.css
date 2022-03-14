@@ -119,11 +119,34 @@ button {
     color: white;
 }
 
-.circle {
-    background-color: #F4B101;
+.first {
+    background-image: url('../static/images/break.jpg');
     text-align: center;
     color: #192f40;
     border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+}
+
+.second {
+    background-image: url('../static/images/burst.jpg');
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    color: #192f40;
+    border-radius: 20px;
+}
+
+.third {
+    background-image: url('../static/images/root.jpg');
+    text-align: center;
+    color: #192f40;
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
 }
 
 .tip {
@@ -133,4 +156,8 @@ button {
 
 .tips {
     border-right: 4px solid #F4B101;
+}
+
+.indicate {
+    color: #F4B101;
 }
