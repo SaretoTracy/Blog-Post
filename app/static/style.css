@@ -119,6 +119,8 @@ button {
     color: white;
 }
 
+
+/* 
 .first {
     background-image: url('../static/images/break.jpg');
     text-align: center;
@@ -147,15 +149,11 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
     height: 50vh;
-}
+} */
 
 .tip {
     display: flex;
     justify-content: space-around;
-}
-
-.tips {
-    border-right: 4px solid #F4B101;
 }
 
 .indicate {
@@ -178,5 +176,35 @@ button {
 
 .quote {
     color: white;
+    text-align: center;
+}
+
+.tips img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+.tipp {
+    background-image: url('../static/images/aaaa.jpg');
+    text-align: center;
+    color: #192f40;
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 500px;
+}
+
+.par {
+    /* background: rgba(0, 0, 0, 0.5); */
+    background-color: #F4B101;
+    width: 380px;
+    height: 370px;
+    border-radius: 50%;
+    color: #192f40;
+    text-shadow: #F4B101 2px 2px 2px;
+    display: flex;
+    align-items: center;
+    margin: auto;
     text-align: center;
 }
