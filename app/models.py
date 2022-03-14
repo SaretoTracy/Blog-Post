@@ -23,6 +23,7 @@ class User(db.Model, UserMixin):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     blogs = db.relationship('Blog', backref='owner')
+    comments = db.relationship('Comment',backref='owner')
 
 
 
@@ -41,6 +42,9 @@ class Blog(db.Model):
     title = db.Column(db.String())
     category = db.Column(db.String(255), nullable=False)
     date = db.Column(db.DateTime(timezone=True), default=func.now())
+    comments = db.relationship('Comment',backref = 'blogs',lazy = "dynamic")
+
+    
     @property
     def password(self):
         raise AttributeError('You cannot read the password attribute')
@@ -54,3 +58,15 @@ class Blog(db.Model):
 
     def __repr__(self):
         return f'Blog {self.content}'
+
+class Comment(db.Model):
+    _tablename__ = 'comments'
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(255), index=True)
+    owner_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    blog_id = db.Column(db.Integer, db.ForeignKey("blogs.id"))
+    
+
+    def __repr__(self):
+        return f'Comment {self.content}'
+

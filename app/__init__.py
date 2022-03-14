@@ -12,7 +12,7 @@ from flask_login import LoginManager
 # define new database
 db = SQLAlchemy()  # database object
 photos = UploadSet('photos',IMAGES)
-UPLOAD_FOLDER = 'static/uploads/'
+UPLOAD_FOLDER = 'static/photos/'
 login_manager = LoginManager()
 migrate = Migrate()
 # provides different security levels and by setting it to strong will monitor the changes in a user's request header and log the user out.
