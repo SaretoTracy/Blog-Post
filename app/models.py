@@ -1,5 +1,6 @@
 from . import db
 from flask_login import UserMixin
+from . import login_manager
 from sqlalchemy.sql import func
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -9,14 +10,19 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 # connect our class to our database and allow communication.
 
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
+
 class User(db.Model, UserMixin):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
-    firstname = db.Column(db.String(150))
+    username = db.Column(db.String(150))
     blogs = db.relationship('Blog', backref='owner')
-    
+
+
 
     def __repr__(self):
         return f"User('{self.username}')"

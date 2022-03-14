@@ -1,8 +1,10 @@
+import os
 class Config:
     '''
     General configuration parent class
     '''
     secret_key = 'no474tghff8735757t5hf75t77t8'
+
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:kimachas@localhost/blog'
     pass
 
