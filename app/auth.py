@@ -47,7 +47,7 @@ def signup():
             db.session.commit()
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
-            return redirect(url_for('main.index'))
+            return redirect(url_for('auth.dashboard'))
 
     return render_template("signup.html", user=current_user)
 
@@ -63,11 +63,18 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
-                return redirect(url_for('main.index'))
+                return redirect(url_for('auth.dashboard'))
             else:
                 flash('Incorrect password, try again.', category='error')
         else:
             flash('Email does not exist.', category='error')
 
     return render_template("login.html", user=current_user)
+
+
+
+@auth.route('/dashboard')
+def dashboard():
+
+    return render_template('dashboard.html')
 
