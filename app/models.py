@@ -62,11 +62,19 @@ class Blog(db.Model):
 class Comment(db.Model):
     _tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String(255), index=True)
+    remark = db.Column(db.String(255), index=True)
     owner_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     blog_id = db.Column(db.Integer, db.ForeignKey("blogs.id"))
     
 
     def __repr__(self):
-        return f'Comment {self.content}'
+        return f'Comment {self.remark}'
 
+
+class Quote:
+    def __init__(self,author,quote):
+        self.author = author
+        self.quote = quote
+
+    def __repr__(self):
+        return f'Comment {self.quote}'

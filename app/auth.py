@@ -1,9 +1,10 @@
 from . import auth
 from flask_sqlalchemy import SQLAlchemy
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import User, Blog,Comment
+from .models import User, Blog,Comment,Quote
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
+from app.request import get_random_quote
 from flask_login import login_user, current_user
 
 
@@ -78,6 +79,7 @@ def login():
 def dashboard():
 
     blog = Blog.query.all()
+    quotes = get_random_quote()
     
 
     

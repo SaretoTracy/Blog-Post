@@ -25,6 +25,9 @@
 
             </ul>
         </div>
+        <div class="quote">
+            <p> {% for quote in quotes%} {{quote.quote}} {% endfor %}</p>
+        </div>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators indicate">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -107,7 +110,8 @@
 
         </div>
 
-        <br> {% for comment in b.comments %} {{comment.content}} {% endfor %}
+        <br> {% for comment in b.comments %}
+        <p>{{comment.remark}}</p> {% endfor %}
         <form class="form-group mb-3 comment" method="POST" action="/create-comment/{{b.id}}">
             <input type="text-area" id="text" name="text" class="form-control" placeholder="Comment on the blog" />
             <button type="submit" class="btn">Comment</button>
