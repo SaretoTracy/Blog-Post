@@ -1,0 +1,74 @@
+{% extends "base.html" %} {% block styles %} {{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='/style.css')}}"> {% endblock %}{% block title %}Profile{% endblock %}
+<link href="https://fonts.googleapis.com/css2?family=Lora&family=Nunito:wght@200&family=Quicksand&family=Roboto&family=Roboto+Slab:wght@300;400&family=Zen+Antique&display=swap" rel="stylesheet"> {% block content %}
+
+
+<div class="container">
+    <div class="navbar">
+        <span>E!Blog</span>
+        <ul class="nav justify-content-end">
+
+            <li class="nav-item">
+                <a class=" nav-link " href="# ">profile</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " href="# ">logout</a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="row prof">
+        <!--user info-->
+        <div class="col-lg-4 col-md-4 col-sm-6">
+            <h3>ℹ️ USER INFO</h3>
+            <p>💁 USERNAME: {{ name }}</p>
+            <p>✉️ USER EMAIL ADDRESS: {{ email }}</p>
+        </div>
+        <div class="bio">
+            <!--Displaying user bio-->
+            <h3>ℹ️ USER BIO</h3>
+            {% if user.bio %}
+            <p> {{user.bio}}</p>
+            {%else%}
+            <p> {{user.username| capitalize}} has no bio </p>
+            {% endif %} {% if user == current_user %}
+            <a href="{{url_for('main.update_profile',uname=user.username)}}">Edit Bio</a> {% endif %}
+        </div>
+
+
+
+
+
+
+        <!--Display profile photo-->
+        <div class="col-md-4">
+            {% if user.profile_pic_path %}
+
+            <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail"> {%else%}
+            <p>No profile picture</p>
+
+            {% endif %} {% if user == current_user %}
+            <form action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
+
+                <input type="file" name="photo" class="form-control" required>
+                <input type="submit">
+            </form>
+            {% endif %}
+        </div>
+
+
+        <!--pitches user has posted-->
+        <div class="col-lg-8 col-md-8 col-sm-6">
+            <h3> POSTED BLOGS</h3>
+            <div>
+                {% for b in blog %}
+                <p>TITLE: {{b.title}} </p>
+                <p>CATEGORY: {{b.category}}</p>
+                <p>BLOG: {{b.content}}</p>
+                <p>Submitted by: {{b.owner.username}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

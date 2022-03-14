@@ -20,6 +20,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
     username = db.Column(db.String(150))
+    bio = db.Column(db.String(255))
+    profile_pic_path = db.Column(db.String())
     blogs = db.relationship('Blog', backref='owner')
 
 
