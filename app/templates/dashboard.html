@@ -107,6 +107,7 @@
 
         </div>
 
+        <br> {% for comment in b.comments %} {{comment.content}} {% endfor %}
         <form class="form-group mb-3 comment" method="POST" action="/create-comment/{{b.id}}">
             <input type="text-area" id="text" name="text" class="form-control" placeholder="Comment on the blog" />
             <button type="submit" class="btn">Comment</button>
