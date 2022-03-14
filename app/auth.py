@@ -73,8 +73,13 @@ def login():
 
 
 
-@auth.route('/dashboard')
+@auth.route('/dashboard', methods=['GET', 'POST'])
+@login_required
 def dashboard():
 
-    return render_template('dashboard.html')
+    blog = Blog.query.all()
+    
+
+    
+    return render_template('dashboard.html',blog=blog)
 

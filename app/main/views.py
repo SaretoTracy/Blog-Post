@@ -1,7 +1,10 @@
 
-from flask import render_template
+from flask import render_template , request, redirect, url_for
 from . import main
+from flask_wtf import FlaskForm
 from .forms import BlogForm
+from ..models import User,Blog
+from .. import db
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 
 
@@ -19,7 +22,7 @@ def blog():
     user = User
 
     if form.validate_on_submit():
-        blog = blog(owner_id=current_user.id, title=form.title.data,
+        blog = Blog(owner_id=current_user.id, title=form.title.data,
                       category=form.category.data, content=form.content.data)
         form.title.data = ''
         form.category.data = ''

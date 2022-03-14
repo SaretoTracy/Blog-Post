@@ -28,7 +28,7 @@
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="20000">
-                    <div class="circle">
+                    <div class="circle d-block w-100">
                         <h3>General Blogging Ideas</h3>
                         <div class="tip">
                             <div class="tips">
@@ -41,10 +41,13 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <a href="/blog"><button>Post a Blog</button></a>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <div class="circle">
+                    <div class="circle d-block w-100">
                         <h3>Ideas to Inspire Your Audience</h3>
                         <div class="tip">
                             <div class="tips">
@@ -63,7 +66,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <div class="circle">
+                    <div class="circle d-block w-100">
                         <h3>Ideas on Creating Content That Provides Valuable Advice</h3>
                         <div class="tip">
                             <div class="tips">
@@ -89,6 +92,16 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 ">
+                {% for b in blog %}
+                <p>TITLE: {{b.title}} </p>
+                <p>CATEGORY: {{b.category}}</p>
+                <p>BLOG: {{b.content}}</p>
+                <p>Submitted by: {{b.owner.username}}</p>
+                {% endfor %}
+            </div>
         </div>
 
 

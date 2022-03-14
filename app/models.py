@@ -35,7 +35,7 @@ class Blog(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     owner_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    description = db.Column(db.String(), index=True)
+    content = db.Column(db.String(), index=True)
     title = db.Column(db.String())
     category = db.Column(db.String(255), nullable=False)
     date = db.Column(db.DateTime(timezone=True), default=func.now())
@@ -51,4 +51,4 @@ class Blog(db.Model):
         return check_password_hash(self.pass_secure, password)
 
     def __repr__(self):
-        return f'Blog {self.description}'
+        return f'Blog {self.content}'
