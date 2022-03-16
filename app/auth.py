@@ -46,6 +46,7 @@ def signup():
                 password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
+    
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
             return redirect(url_for('auth.dashboard'))
@@ -133,6 +134,22 @@ def delete_comment(comment_id):
         db.session.commit()
 
     return redirect(url_for('auth.blogpost'))
+@auth.route("/delete-blog/<id>")
+@login_required
+def delete_blog(id):
+    blog = Blog.query.filter_by(id=id).first()
+
+    if not blog:
+        flash("blog does not exist.", category='error')
+    elif current_user.id != blog.owner_id:
+        flash('You do not have permission to delete this blog.', category='error')
+    else:
+        db.session.delete(blog)
+        db.session.commit()
+        flash('blog deleted.', category='success')
+
+    return redirect(url_for('auth.blogpost'))
+
 
 @auth.route("/logout")
 @login_required

@@ -35,6 +35,15 @@
                 <p>{{b.content}}</p>
                 <small>Submitted by: {{b.owner.username}}</small>
 
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/delete-blog/{{b.id}}" class="dropdown-item">Delete</a>
+                        </li>
+                    </ul>
+                </div>
+
 
                 <br>
                 <div class="collapse" id="comments-{{b.id}}">

@@ -77,4 +77,24 @@ class Quote:
         self.quote = quote
 
     def __repr__(self):
-        return f'Comment {self.quote}'
+         return f'Comment {self.quote}'
+
+# class Subscribe(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+    
+#     email = db.Column(db.String(255),unique = True,index = True)
+
+
+#     def save_subscriber(self):
+#         db.session.add(self)
+#         db.session.commit()
+
+    
+
+#     @classmethod
+#     def get_subscriber(cls, id):
+#         bloggins= Subscribe.query.filter_by(id=id).all()
+#         return bloggins
+
+#     def __repr__(self):
+#         return f'User {self.name}'

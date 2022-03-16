@@ -1,15 +1,18 @@
 
 from flask import render_template , request, redirect, url_for
 from . import main
+
 from flask_wtf import FlaskForm
 from .forms import BlogForm,UpdateProfile
 from ..models import User,Blog
 from .. import db,photos
+from ..email import mail_message
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 
 
-@main.route('/')
+@main.route('/',methods = ["GET","POST"])
 def index():
+
 
     return render_template('index.html')
 

@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from config import config_options
 from flask_migrate import Migrate
 import os
+from flask_mail import Mail
 from flask_uploads import UploadSet,configure_uploads,IMAGES
 from flask_login import LoginManager
 
@@ -14,6 +15,7 @@ db = SQLAlchemy()  # database object
 photos = UploadSet('photos',IMAGES)
 UPLOAD_FOLDER = 'static/photos/'
 login_manager = LoginManager()
+mail = Mail()
 migrate = Migrate()
 # provides different security levels and by setting it to strong will monitor the changes in a user's request header and log the user out.
 login_manager.session_protection = 'strong'
@@ -40,6 +42,7 @@ def create_app(config_name):
     app.config['UPLOADED_PHOTOS_DEST'] = os.getcwd()
 
     # ....
+    mail.init_app(app)
     # Registering the blueprint
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
