@@ -13,12 +13,8 @@
 <body>
     <div class="container home">
         <div class="navbar">
-            <a href="/dashboard"><span>E!Blog</span></a>
+            <span>E!Blog</span>
             <ul class="nav justify-content-end">
-
-                <li class="nav-item">
-                    <a class=" nav-link " href="/blogpost ">Blogs</a>
-                </li>
 
                 <li class="nav-item">
                     <a href="{{url_for('main.profile',uname=current_user.username)}}">Profile </a></li>
@@ -32,17 +28,34 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-6 logs">
                 {% for b in blog %}
-                <h2>TITLE: {{b.title}} </h2>
-                <h3>CATEGORY: {{b.category}}</h3>
+                <p>TITLE: {{b.title}} </p>
+                <p>CATEGORY: {{b.category}}</p>
                 <p>BLOG: {{b.content}}</p>
-                <p><small>Submitted by: {{b.owner.username}}</small></p>
+                <p>Submitted by: {{b.owner.username}}</p>
 
             </div>
 
         </div>
-        <br> {% for comment in b.comments %}
-        <p>{{comment.remark}}</p>
-        {% endfor %}
+        <br>
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                View Comments
+            </button>
+        </p>
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+                    {% for comment in b.comments %}
+                    <div>
+                        <p>{{comment.remark}}</p>
+
+                        <p>Comment by:
+                            <a href="/blogs/{{comment.owner.username}}">{{comment.owner.username}}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 
         <form class="form-group mb-3 comment" method="POST" action="/create-comment/{{b.id}}">
             <input type="text-area" id="remark" name="remark" class="form-control" placeholder="Comment on the blog" />
