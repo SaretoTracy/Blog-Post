@@ -30,14 +30,10 @@
             </ul>
         </div>
         <div class="quote">
-            <p> {% for quote in quotes%} {{quote.quote}}<br><small>AUTHOR: {{quote.author}}</small> {% endfor %}</p>
+            <p> <strong>"""</strong> {% for quote in quotes%} {{quote.quote}}<br><small>AUTHOR: {{quote.author}}</small> {% endfor %}<strong>"""</strong> </p>
         </div>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators indicate">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
+
             <div class="carousel-inner">
                 <div class="carousel-item active first">
                     <h3 align-text=center>What is a blog post?</h3>
@@ -45,7 +41,7 @@
                         <div class="tips">
                             <img src="../static/images/aaaa.jpg" width="300" />
                         </div>
-                        <div class="tipp">
+                        <div class="tipp one">
                             <div class="par">
                                 <p>A blog post is any article, news piece,<br> or guide that's published in the blog section of a website<br>Blog posts allow you and your business to publish insights, thoughts, and stories on your website about any topic.
                                     <br>They can help you boost brand awareness, credibility, conversions, and revenue.
@@ -62,9 +58,9 @@
                     <h3>Ideas to Inspire Your Audience</h3>
                     <div class="tip">
                         <div class="tips">
-                            <img src="../static/images/aaaa.jpg" width="300" />
+                            <img src="../static/images/aa.jpg" width="300" />
                         </div>
-                        <div class="tipp">
+                        <div class="tipp two">
                             <div class="par">
                                 <p>A blog post is any article, news piece,<br> or guide that's published in the blog section of a website<br>Blog posts allow you and your business to publish insights, thoughts, and stories on your website about any topic.
                                     <br>They can help you boost brand awareness, credibility, conversions, and revenue.
@@ -77,9 +73,9 @@
                     <h3>Ideas on Creating Content That Provides Valuable Advice</h3>
                     <div class="tip">
                         <div class="tips">
-                            <img src="../static/images/aaaa.jpg" width="300" />
+                            <img src="../static/images/aaa.jpg" width="300" />
                         </div>
-                        <div class="tipp">
+                        <div class="tipp three">
                             <div class="par">
                                 <p>A blog post is any article, news piece,<br> or guide that's published in the blog section of a website<br>Blog posts allow you and your business to publish insights, thoughts, and stories on your website about any topic.
                                     <br>They can help you boost brand awareness, credibility, conversions, and revenue.
@@ -98,12 +94,13 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <div class="blogbtn">
+            <a href="/blog"><button class="btn  btn-primary">Create Blog</button></a>
+        </div>
+    </div>
 
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 
 </body>
 

@@ -25,16 +25,15 @@
 
             </ul>
         </div>
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-6 logs">
-                {% for b in blog %}
-                <p>TITLE: {{b.title}} </p>
-                <p>CATEGORY: {{b.category}}</p>
+        <div class="row logs">
+
+            {% for b in blog %}
+            <div class="col-md-4">
+                <h2>TITLE: {{b.title}} </h2>
+                <h3>CATEGORY: {{b.category}}</h3>
                 <p>BLOG: {{b.content}}</p>
-                <p>Submitted by: {{b.owner.username}}</p>
-
+                <small>Submitted by: {{b.owner.username}}</small>
             </div>
-
         </div>
         <br>
         <p>
@@ -50,23 +49,24 @@
                         <p>{{comment.remark}}</p>
 
                         <p>Comment by:
-                            <a href="/blogs/{{comment.owner.username}}">{{comment.owner.username}}</a>
+                            <a href="/blogs/{{comment.owner.username}} ">{{comment.owner.username}}</a>
                     </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
 
-        <form class="form-group mb-3 comment" method="POST" action="/create-comment/{{b.id}}">
-            <input type="text-area" id="remark" name="remark" class="form-control" placeholder="Comment on the blog" />
-            <button type="submit" class="btn">Comment</button>
+
+        <form class="form-group mb-3 comment " method="POST " action="/create-comment/{{b.id}} ">
+            <input type="text-area " id="remark " name="remark " class="form-control " placeholder="Comment on the blog " />
+            <span><button type="submit " class="btn ">Comment</button></span>
         </form>
         {% endfor %}
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous ">
         </script>
-
+    </div>
 </body>
 
 </html>

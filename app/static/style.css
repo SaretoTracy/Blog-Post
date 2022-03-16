@@ -16,12 +16,6 @@
     background-color: #192f40;
 }
 
-.home {
-    /* border: 15px solid#ff0000; */
-    /* margin-top: 1rem; */
-    background-color: #192f40;
-}
-
 .navbar {
     font-size: 28px;
 }
@@ -109,47 +103,20 @@ form {
     font-size: 27px;
 }
 
+.carousel {
+    padding-top: 5rem;
+    height: 60vh;
+}
+
 .in {
     margin-top: 3rem;
     color: #F4B101;
 }
 
-button {
+.btn {
     background-color: #F4B101;
     color: white;
 }
-
-
-/* 
-.first {
-    background-image: url('../static/images/break.jpg');
-    text-align: center;
-    color: #192f40;
-    border-radius: 20px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50vh;
-}
-
-.second {
-    background-image: url('../static/images/burst.jpg');
-    text-align: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50vh;
-    color: #192f40;
-    border-radius: 20px;
-}
-
-.third {
-    background-image: url('../static/images/root.jpg');
-    text-align: center;
-    color: #192f40;
-    border-radius: 20px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50vh;
-} */
 
 .tip {
     display: flex;
@@ -157,19 +124,20 @@ button {
 }
 
 a {
-    text-decoration: none;
-}
-
-.indicate {
-    color: #F4B101;
+    text-decoration: none !important;
 }
 
 .prof p {
     color: white;
 }
 
+.comment {
+    display: flex;
+    justify-content: space-around;
+}
+
 .comment input {
-    width: 100%;
+    width: 60%;
     padding: 0 5px;
     height: 40px;
     font-size: 16px;
@@ -183,6 +151,11 @@ a {
     text-align: center;
 }
 
+strong {
+    font-size: 28px;
+    color: #F4B101;
+}
+
 .tips img {
     width: 350px;
     height: 350px;
@@ -190,7 +163,6 @@ a {
 }
 
 .tipp {
-    background-image: url('../static/images/aaaa.jpg');
     text-align: center;
     color: #192f40;
     border-radius: 20px;
@@ -199,18 +171,36 @@ a {
     width: 500px;
 }
 
+.one {
+    background-image: url('../static/images/aaaa.jpg');
+}
+
+.two {
+    background-image: url('../static/images/aa.jpg');
+}
+
+.three {
+    background-image: url('../static/images/aaa.jpg');
+}
+
 .par {
-    /* background: rgba(0, 0, 0, 0.5); */
-    background-color: #F4B101;
+    background: rgba(0, 0, 0, 0.5);
+    /* background-color: #F4B101; */
     width: 380px;
     height: 370px;
     border-radius: 50%;
-    color: #192f40;
-    text-shadow: #F4B101 2px 2px 2px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
     display: flex;
     align-items: center;
     margin: auto;
     text-align: center;
+}
+
+.blogbtn {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
 }
 
 .logs {
