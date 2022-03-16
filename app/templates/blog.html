@@ -8,7 +8,11 @@
         <ul class="nav justify-content-end">
 
             <li class="nav-item">
-                <a class=" nav-link " href="# ">profile</a>
+                <a class=" nav-link " href="/blogpost ">Blogs</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{url_for('main.profile',uname=current_user.username)}}">Profile </a></li>
             </li>
             <li class="nav-item ">
                 <a class="nav-link " href="# ">logout</a>

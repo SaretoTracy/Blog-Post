@@ -90,6 +90,7 @@ def blogpost():
 
     
     comment = Comment.query.all()
+    print(comment)
     blog = Blog.query.all()
     
     
@@ -100,7 +101,9 @@ def blogpost():
 @auth.route("/create-comment/<blog_id>", methods=['POST'])
 @login_required
 def create_comment(blog_id):
-    remark = request.form.get('remark')
+
+    if request.method == 'POST':
+        remark = request.form.get('remark')
 
     if not remark:
         flash('Comment cannot be empty.', category='error')
@@ -115,4 +118,10 @@ def create_comment(blog_id):
             flash('blog does not exist.', category='error')
 
     return redirect(url_for('auth.blogpost'))
+
+@auth.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("main.index"))
 

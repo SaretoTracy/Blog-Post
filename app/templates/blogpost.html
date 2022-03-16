@@ -13,8 +13,12 @@
 <body>
     <div class="container home">
         <div class="navbar">
-            <span>E!Blog</span>
+            <a href="/dashboard"><span>E!Blog</span></a>
             <ul class="nav justify-content-end">
+
+                <li class="nav-item">
+                    <a class=" nav-link " href="/blogpost ">Blogs</a>
+                </li>
 
                 <li class="nav-item">
                     <a href="{{url_for('main.profile',uname=current_user.username)}}">Profile </a></li>
@@ -28,19 +32,20 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-6 logs">
                 {% for b in blog %}
-                <p>TITLE: {{b.title}} </p>
-                <p>CATEGORY: {{b.category}}</p>
+                <h2>TITLE: {{b.title}} </h2>
+                <h3>CATEGORY: {{b.category}}</h3>
                 <p>BLOG: {{b.content}}</p>
-                <p>Submitted by: {{b.owner.username}}</p>
+                <p><small>Submitted by: {{b.owner.username}}</small></p>
 
             </div>
 
         </div>
         <br> {% for comment in b.comments %}
-        <p>{{comment.remark}}</p> {% endfor %}
+        <p>{{comment.remark}}</p>
+        {% endfor %}
 
         <form class="form-group mb-3 comment" method="POST" action="/create-comment/{{b.id}}">
-            <input type="text-area" id="text" name="text" class="form-control" placeholder="Comment on the blog" />
+            <input type="text-area" id="remark" name="remark" class="form-control" placeholder="Comment on the blog" />
             <button type="submit" class="btn">Comment</button>
         </form>
         {% endfor %}

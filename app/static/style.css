@@ -156,6 +156,10 @@ button {
     justify-content: space-around;
 }
 
+a {
+    text-decoration: none;
+}
+
 .indicate {
     color: #F4B101;
 }
