@@ -146,6 +146,10 @@ a {
     /* outline: none; */
 }
 
+.fas {
+    color: #F4B101;
+}
+
 .quote {
     color: white;
     text-align: center;

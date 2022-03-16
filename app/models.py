@@ -42,7 +42,7 @@ class Blog(db.Model):
     title = db.Column(db.String())
     category = db.Column(db.String(255), nullable=False)
     date = db.Column(db.DateTime(timezone=True), default=func.now())
-    comments = db.relationship('Comment',backref = 'blogs',lazy = "dynamic")
+    comments = db.relationship('Comment',backref = 'blogs')
 
     
     @property

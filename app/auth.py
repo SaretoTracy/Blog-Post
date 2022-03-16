@@ -119,6 +119,21 @@ def create_comment(blog_id):
 
     return redirect(url_for('auth.blogpost'))
 
+@auth.route("/delete-comment/<comment_id>")
+@login_required
+def delete_comment(comment_id):
+    comment = Comment.query.filter_by(id=comment_id).first()
+
+    if not comment:
+        flash('Comment does not exist.', category='error')
+    elif current_user.id != comment.owner_id and current_user.id != comment.blog.owner_id:
+        flash('You do not have permission to delete this comment.', category='error')
+    else:
+        db.session.delete(comment)
+        db.session.commit()
+
+    return redirect(url_for('auth.blogpost'))
+
 @auth.route("/logout")
 @login_required
 def logout():
