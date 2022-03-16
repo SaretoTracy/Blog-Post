@@ -79,11 +79,12 @@ def login():
 def dashboard():
 
     blog = Blog.query.all()
+    comment = Comment.query.all()
     quotes = get_random_quote()
     
 
     
-    return render_template('dashboard.html',blog=blog, quotes=quotes)
+    return render_template('dashboard.html',blog=blog, quotes=quotes,comment=comment)
 
 @auth.route("/create-comment/<blog_id>", methods=['POST'])
 @login_required
