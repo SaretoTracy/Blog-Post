@@ -24,7 +24,7 @@
     <div class="signup text-center">
 
         <form class="form-signin" method="POST" action="/blog">
-            <h4 class="form-signin-heading">Craft Your Blog Here</h4>
+            <h3 class="form-signin-heading">Craft Your Blog Here</h3>
             {{ form.hidden_tag() }} {{ wtf.form_field(form.title) }} {{ wtf.form_field(form.category) }} {{ wtf.form_field(form.content) }}
 
             <button class="btn" type="submit">Submit Blog</button>
