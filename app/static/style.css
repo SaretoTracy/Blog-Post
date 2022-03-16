@@ -13,7 +13,7 @@
 }
 
 .container {
-    background-color: #192f40;
+    background-color: #2f3552;
 }
 
 .navbar {
@@ -36,20 +36,22 @@ h1 {
 }
 
 span {
-    color: #F4B101;
+    color: #e15e9a;
 }
 
 h3 {
-    color: #F4B101;
+    color: #e15e9a;
 }
 
 .blog {
     padding: 15px;
 }
 
+
+/* 
 .p-3 {
     background-color: #F4B101;
-}
+} */
 
 .p-3:hover {
     background-color: white;
@@ -57,7 +59,7 @@ h3 {
 }
 
 .sign p {
-    color: white;
+    color: #69bbe1;
     text-align: center;
     font-size: 24px;
 }
@@ -65,7 +67,6 @@ h3 {
 .log {
     display: flex;
     justify-content: space-around;
-    background-color: #192f40;
     height: 100vh;
     margin-top: 2rem;
 }
@@ -81,9 +82,9 @@ form {
 
 .form-group {
     position: relative;
-    border-bottom: 2px solid #adadad;
+    border-bottom: 2px solid #e15e9a;
     margin: 30px 0;
-    color: #F4B101;
+    color: #69bbe1;
 }
 
 .form-group input {
@@ -97,7 +98,7 @@ form {
 }
 
 .content {
-    color: #F4B101;
+    color: #e15e9a;
     line-height: 8rem;
     margin-top: 8rem;
     font-size: 27px;
@@ -110,11 +111,11 @@ form {
 
 .in {
     margin-top: 3rem;
-    color: #F4B101;
+    color: #e15e9a;
 }
 
 .btn {
-    background-color: #F4B101;
+    background-color: #e15e9a;
     color: white;
 }
 
@@ -141,13 +142,9 @@ a {
     padding: 0 5px;
     height: 40px;
     font-size: 16px;
-    border: 2px solid #F4B101;
+    border: 2px solid #69bbe1;
     background: none;
     /* outline: none; */
-}
-
-.fas {
-    color: #F4B101;
 }
 
 .quote {
@@ -166,16 +163,26 @@ strong {
     border-radius: 50%;
 }
 
+.home {
+    background-color: #2f3552;
+}
+
 .articles {
-    background: rgb(25, 47, 64);
-    background: radial-gradient(circle, rgba(25, 47, 64, 1) 0%, rgba(25, 47, 64, 1) 77%, rgba(244, 177, 1, 1) 85%, rgba(244, 177, 1, 1) 100%);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    color: white;
-    margin-left: 6rem;
-    padding-bottom: 3rem;
+    /* border-bottom: 10px solid ;
+    border-top: 10px solid blueviolet;
+    border-left: 10px solid #f76e1f;
+    border-right: 10px solid #2fd8fc; */
+    border: 3px solid #e15e9a;
+    border-radius: 10px;
+    width: 20%;
+    color: #69bbe1;
+    padding: 1rem;
+    margin: 2rem 0px 2rem 0rem;
     text-align: center;
+}
+
+.crd {
+    background-color: transparent;
 }
 
 .tipp {
@@ -185,6 +192,18 @@ strong {
     background-size: cover;
     background-repeat: no-repeat;
     width: 500px;
+}
+
+.first {
+    background-color: #e15e9a;
+}
+
+.second {
+    background-color: #69bbe1;
+}
+
+.third {
+    background-color: #f3a64a;
 }
 
 .one {
@@ -200,7 +219,7 @@ strong {
 }
 
 .par {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     /* background-color: #F4B101; */
     width: 380px;
     height: 370px;

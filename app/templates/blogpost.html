@@ -12,24 +12,24 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container home">
         <div class="navbar">
-            <span>E!Blog</span>
+            <a href="/dashboard"><span>E!Blog</span></a>
             <ul class="nav justify-content-end">
 
                 <li class="nav-item">
                     <a href="{{url_for('main.profile',uname=current_user.username)}}">Profile </a></li>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " href="# ">logout</a>
+                    <a class="nav-link " href="{{ url_for('auth.logout')}}">logout</a>
                 </li>
 
             </ul>
         </div>
 
-        <div class="row articles">
+        <div class="row">
             {% for b in blog %}
-            <div class="col-md-6">
+            <div class="col-md-12 articles">
                 <h3>{{b.title}} </h3>
                 <h5>{{b.category}}</h5>
                 <p>{{b.content}}</p>
@@ -38,8 +38,8 @@
 
                 <br>
                 <div class="collapse" id="comments-{{b.id}}">
-                    <div class="card">
-                        <div class="card-body" id="comments-expanded-{{b.id}}">
+                    <div class="card ">
+                        <div class="card-body crd" id="comments-expanded-{{b.id}}">
                             {% for comment in b.comments %}
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
