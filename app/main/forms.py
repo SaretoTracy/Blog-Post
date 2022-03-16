@@ -28,5 +28,10 @@ class SubscribedUserForm(FlaskForm):
             raise ValidationError('Email Already subscribed')
 
 
+class UpdateBlog(FlaskForm):
+    content = TextAreaField('Update your blog', validators=[InputRequired()])
+    submit = SubmitField('Update')
+
+
 
 

@@ -34,20 +34,18 @@
                 <h5>{{b.category}}</h5>
                 <p>{{b.content}}</p>
                 <small>Submitted by: {{b.owner.username}}</small>
+                <br>
 
                 <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/delete-blog/{{b.id}}" class="dropdown-item">Delete</a>
-                        </li>
+                            <a href="/delete-blog/{{b.id}}" class="dropdown-item">Delete Blog</a> </li>
                     </ul>
                 </div>
-
-
                 <br>
                 <div class="collapse" id="comments-{{b.id}}">
-                    <div class="card ">
+                    <div class="card">
                         <div class="card-body crd" id="comments-expanded-{{b.id}}">
                             {% for comment in b.comments %}
                             <div class="d-flex justify-content-between align-items-center">
@@ -63,11 +61,16 @@
                                                 <a href="/delete-comment/{{comment.id}}" class="dropdown-item">Delete</a> </li>
                                         </ul>
                                     </div>
-
                                 </div>
-                            </div> {% endfor %} </div>
+                            </div>{% endfor %}
+                        </div>
                     </div>
                 </div>
+
+
+
+
+
                 <p class="card-text">
                     {% if b.comments|length > 0 %}
                     <a data-bs-toggle="collapse" href="#comments-{{b.id}}" role="button">
@@ -76,14 +79,16 @@
                     {% else %}
                     <small class="text-muted">No Comments</small> {% endif %}
                 </p>
+
+
+
                 <form class="form-group mb-3 comment" method="POST" action="/create-comment/{{b.id}}">
                     <input type="text" id="remark" name="remark" class="form-control" placeholder="Comment something!" />
                     <button type="submit" class="btn btn-primary">Comment</button>
                 </form>
             </div>
-            {% endfor %}
-
         </div>
+        {% endfor %}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous ">
     </script>

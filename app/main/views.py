@@ -3,7 +3,7 @@ from flask import render_template , request, redirect, url_for
 from . import main
 
 from flask_wtf import FlaskForm
-from .forms import BlogForm,UpdateProfile
+from .forms import BlogForm,UpdateProfile,UpdateBlog
 from ..models import User,Blog
 from .. import db,photos
 from ..email import mail_message
@@ -74,6 +74,26 @@ def update_pic(uname):
         user.profile_pic_path = path
         db.session.commit()
     return redirect(url_for('main.profile', uname=uname))
+
+
+# @main.route('/user/<uname>/updateblog', methods=['GET', 'POST'])
+# @login_required
+# def updateblog(uname):
+#     user = User.query.filter_by(username=uname).first()
+#     if user is None:
+#         return redirect(url_for('.error'))
+
+#     form = UpdateBlog()
+#     if form.validate_on_submit():
+#         content = form.content.data
+
+#         blog = Blog(user)
+#         db.session.add(blog)
+#         db.session.commit()
+
+#         return redirect(url_for('auth.dashboard', uname=user.username))
+
+#     return render_template('blogpost/updateblog.html', form=form)
 
 
 
