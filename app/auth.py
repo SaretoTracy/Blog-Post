@@ -78,30 +78,41 @@ def login():
 @login_required
 def dashboard():
 
-    blog = Blog.query.all()
-    comment = Comment.query.all()
+    
     quotes = get_random_quote()
     
 
     
-    return render_template('dashboard.html',blog=blog, quotes=quotes,comment=comment)
+    return render_template('dashboard.html', quotes=quotes)
+@auth.route('/blogpost', methods=['GET', 'POST'])
+@login_required
+def blogpost():
+
+    
+    comment = Comment.query.all()
+    blog = Blog.query.all()
+    
+    
+
+    
+    return render_template('blogpost.html',blog=blog,comment=comment)
 
 @auth.route("/create-comment/<blog_id>", methods=['POST'])
 @login_required
 def create_comment(blog_id):
-    content = request.form.get('content')
+    remark = request.form.get('remark')
 
-    if not content:
+    if not remark:
         flash('Comment cannot be empty.', category='error')
     else:
         blog = Blog.query.filter_by(id=blog_id)
         if blog:
             comment = Comment(
-                content=content, author=current_user.id, blog_id=blog_id)
+                remark=remark, owner_id=current_user.id, blog_id=blog_id)
             db.session.add(comment)
             db.session.commit()
         else:
             flash('blog does not exist.', category='error')
 
-    return redirect(url_for('auth.dashboard'))
+    return redirect(url_for('auth.blogpost'))
 

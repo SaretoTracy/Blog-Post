@@ -107,7 +107,7 @@
             </div>
 
         </div>
-        <br> {% for comment in b.comments %}
+        <br> {% for comment in comments %}
         <p>{{comment.remark}}</p> {% endfor %}
 
         <form class="form-group mb-3 comment" method="POST" action="/create-comment/{{b.id}}">
